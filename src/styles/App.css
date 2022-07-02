@@ -1,0 +1,82 @@
+:root {
+  font-size: 62.5%;
+
+  --backgroundAppColor: #151616;
+  --primaryColor: #838383;
+  --navButtonColor: rgb(15, 56, 75);
+}
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  color: var(--primaryColor);
+  background-image: url("../images/pexels-dana-tentis-370799.jpg");
+}
+#root::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(200px);
+}
+.app {
+  display: flex;
+  width: max(36rem, 65vw);
+  height: max(36rem, 40vw);
+  font-size: clamp(1.5rem, 1.8vw, 3rem);
+  background-color: var(--backgroundAppColor);
+  border-radius: 4rem;
+  z-index: 1;
+}
+.app nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 25%;
+}
+.app nav h5 {
+  padding: 1em;
+  color: #fff;
+}
+.app nav ul {
+  position: relative;
+  width: 80%;
+  margin: 1em 0;
+  padding: 1em 0;
+  list-style-type: none;
+  border-bottom: 1px solid #333;
+}
+.app nav ul::before {
+  position: absolute;
+  content: "sites";
+  top: 0;
+  left: 0;
+  transform: translate(100%, 0);
+  letter-spacing: 1px;
+  font-size: clamp(0.6rem, 1vw, 1.6rem);
+}
+.app nav ul a {
+  display: block;
+  margin: 0.3em 0.5em;
+  padding: 0.3em 1em;
+  font-size: clamp(1rem, 1.2vw, 2.4rem);
+  color: var(--primaryColor);
+  text-decoration: none;
+  border-radius: 2rem;
+  transition: color 0.2s, background-color 0.2s;
+}
+.app nav ul a i {
+  width: 18%;
+}
+.app nav ul a.active {
+  background-color: var(--navButtonColor);
+  color: #fff;
+}
+
+.app main {
+  flex-grow: 1;
+}
