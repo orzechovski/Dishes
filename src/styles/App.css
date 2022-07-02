@@ -2,8 +2,9 @@
   font-size: 62.5%;
 
   --backgroundAppColor: #151616;
+  --backgroundFormColor: #091f24;
   --primaryColor: #838383;
-  --navButtonColor: rgb(15, 56, 75);
+  --navButtonColor: #25869c;
 }
 #root {
   display: flex;
@@ -66,7 +67,7 @@
   font-size: clamp(1rem, 1.2vw, 2.4rem);
   color: var(--primaryColor);
   text-decoration: none;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   transition: color 0.2s, background-color 0.2s;
 }
 .app nav ul a i {
@@ -78,5 +79,8 @@
 }
 
 .app main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-grow: 1;
 }

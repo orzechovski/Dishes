@@ -1,0 +1,34 @@
+.mainForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  border-radius: 4rem;
+  background-image: linear-gradient(45deg, #0f0f0f50, #1d1d1db6);
+  background-image: radial-gradient(rgb(28, 28, 28), rgb(21, 21, 21));
+  box-shadow: 0 0 60px 10px #0000005c;
+}
+.mainForm label {
+  display: flex;
+  align-items: flex-end;
+  width: 80%;
+  flex-basis: 15%;
+  border-bottom: 1px solid #333;
+}
+.mainForm input,
+select {
+  margin-left: auto;
+  width: 40%;
+  height: 60%;
+  font-size: clamp(1rem, 1.2vw, 2.4rem);
+  padding: 0 0.5em;
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+  border: 1px solid var(--navButtonColor);
+  border-radius: 0.5rem;
+}
+.mainForm select {
+  padding: 0;
+}
