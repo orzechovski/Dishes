@@ -10,7 +10,7 @@ const Navigation = () => {
   const menu = list.map((item) => (
     <li key={item.name}>
       <NavLink to={item.path}>
-        {item.iconClass !== " " ? <i class={item.iconClass}></i> : null} {item.name}
+        {item.iconClass !== " " ? <i className={item.iconClass}></i> : null} {item.name}
       </NavLink>
     </li>
   ));

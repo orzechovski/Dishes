@@ -2,11 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   width: 80%;
   height: 80%;
   border-radius: 4rem;
-  background-image: linear-gradient(45deg, #0f0f0f50, #1d1d1db6);
-  background-image: radial-gradient(rgb(28, 28, 28), rgb(21, 21, 21));
+  background-image: radial-gradient(#1c1c1c, #151515);
   box-shadow: 0 0 60px 10px #0000005c;
 }
 .mainForm label {
@@ -29,6 +29,44 @@ select {
   border: 1px solid var(--navButtonColor);
   border-radius: 0.5rem;
 }
+input[type="range"] {
+  padding: 0;
+  cursor: pointer;
+}
+
+select > * {
+  background-color: #333;
+  border-radius: 10px;
+}
 .mainForm select {
   padding: 0;
+  cursor: pointer;
+}
+.mainForm button {
+  width: 30%;
+  height: 10%;
+  font-size: clamp(1rem, 1.2vw, 2.4rem);
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--navButtonColor);
+  background-color: transparent;
+  border: 2px solid var(--navButtonColor);
+  border-radius: 0.5rem;
+  margin-top: auto;
+  margin-bottom: 8%;
+  cursor: pointer;
+  transition: color 0.1s, background-color 0.1s;
+}
+.mainForm button:hover {
+  background-color: var(--navButtonColor);
+  color: #1c1c1c;
+}
+.errors {
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: red;
+  list-style-type: none;
+  font-size: clamp(0.6rem, 1vw, 1.2rem);
 }
