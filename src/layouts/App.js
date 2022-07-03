@@ -1,11 +1,11 @@
 import MainContent from "./MainContent";
 import Navigation from "./Navigation";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import "../styles/App.css";
 
 function App() {
   return (
-    <Router basename="/#">
+    <Router baseline="/">
       <div className="app">
         <nav>
           <h5>Dishes-app</h5>
