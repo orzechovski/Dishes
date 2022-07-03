@@ -5,7 +5,7 @@ import "../styles/App.css";
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router basename="/#">
       <div className="app">
         <nav>
           <h5>Dishes-app</h5>
