@@ -1,0 +1,16 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: 80%;
+
+  font-weight: 100;
+  text-align: center;
+}
+.home h3 {
+  margin-top: 5%;
+}
+.home p {
+  font-size: clamp(1rem, 1.2vw, 2.4rem);
+}

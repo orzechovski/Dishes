@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { OrderContext } from "../dataOrders";
 import dishNameValidation from "../DishNameValidation";
 import "../styles/Form.css";
 const Form = () => {
@@ -6,11 +7,12 @@ const Form = () => {
   const [preparation_time, setPreparation_time] = useState("");
   const [type, setType] = useState("pizza");
   const [no_of_slices, setNumber_of_slices] = useState(1);
-  const [diameter, setDiamater] = useState(0);
+  const [diameter, setDiamater] = useState(1);
   const [slices_of_bread, setSlices_of_bread] = useState(1);
   const [spiciness_scale, setSpiciness_scale] = useState(1);
   const [isPosted, setisPosted] = useState(false);
   const [errors, setErros] = useState([]);
+  const [order, setOrder] = useContext(OrderContext);
 
   const showInputs = () => {
     if (type === "pizza")
@@ -22,7 +24,7 @@ const Form = () => {
           </label>
           <label>
             Pizza diameter:
-            <input type="number" required value={diameter} onChange={(e) => setDiamater(e.target.value)} />
+            <input type="number" required min="1" value={diameter} onChange={(e) => setDiamater(e.target.value)} />
           </label>
         </>
       );
@@ -31,7 +33,7 @@ const Form = () => {
       return (
         <label>
           Spiciness of soup:
-          <input type="range" required min="1" max="10" step="1" value={spiciness_scale} onChange={(e) => setSpiciness_scale(e.target.value)} />
+          <input type="number" required min="1" max="10" step="1" value={spiciness_scale} onChange={(e) => setSpiciness_scale(e.target.value)} />
         </label>
       );
 
@@ -51,10 +53,10 @@ const Form = () => {
     const errors = validation.map((error) => <li key={error}>{error}</li>);
     setErros(errors);
 
-    setisPosted(true);
-
     let order = {};
     if (errors.length === 0) {
+      setisPosted(true);
+
       if (type === "pizza") order = { name, preparation_time, type, no_of_slices, diameter };
       if (type === "soup") order = { name, preparation_time, type, spiciness_scale };
       if (type === "sandwich") order = { name, preparation_time, type, slices_of_bread };
@@ -66,13 +68,12 @@ const Form = () => {
           "Content-type": "application/json; charset=UTF-8",
         },
       })
-        .then((response) => {
-          if (!response.ok) {
-            console.log("ERROR: " + response.status);
-          }
-        })
+        .then((response) => response.json())
         .then((data) => {
+          setOrder((prevOrder) => [...prevOrder, data]);
           setisPosted(false);
+          setName("");
+          setPreparation_time("");
         })
         .catch((error) => console.log(error));
     }
@@ -104,7 +105,10 @@ const Form = () => {
         </select>
       </label>
       {showInputs(type)}
-      <button type="submit">{isPosted ? "Sending..." : "Send order"}</button>
+      <button type="submit">
+        <i className="fa-solid fa-paper-plane"></i>
+        {isPosted ? "Sending..." : "Send order"}
+      </button>
       <div className="errors">{errors}</div>
     </form>
   );
