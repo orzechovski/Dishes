@@ -5,10 +5,10 @@ import "../styles/App.css";
 
 function App() {
   return (
-    <Router baseline="/">
+    <Router>
       <div className="app">
         <nav>
-          <h5>Dishes-app</h5>
+          <h5>dishes-app</h5>
           <Navigation />
         </nav>
         <main>
