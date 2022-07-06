@@ -10,16 +10,16 @@
   display: flex;
   width: 90%;
   height: 15%;
-  background-image: radial-gradient(rgba(0, 255, 255, 0.041) 10%, rgba(51, 51, 51, 0.256) 200%);
+  background-color: #0866992d;
   border: 1px solid #333;
-  border-radius: 2rem;
+  color: #adadad;
+  border-radius: 1rem;
   margin-bottom: 0.3em;
   cursor: pointer;
-  transition: transform 0.1s, color 0.1s;
+  transition: color 0.1s;
 }
 .order:hover {
-  transform: scale(1.01);
-  color: rgb(172, 169, 169);
+  color: #e3e3e3;
 }
 .order h4 {
   font-weight: 100;
@@ -34,7 +34,7 @@
 .order_mainPart {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 40%;
   padding-left: 1em;
   border-right: 1px solid #333;
@@ -43,7 +43,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  padding-left: 0.2em;
+  padding-left: 1em;
   flex-grow: 1;
 }
 .order_secondPart > * {

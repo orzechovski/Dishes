@@ -8,7 +8,7 @@ function App() {
     <Router>
       <div className="app">
         <nav>
-          <h5>dishes-app</h5>
+          <h5>Dishes-app</h5>
           <Navigation />
         </nav>
         <main>
